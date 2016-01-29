@@ -48,3 +48,16 @@ function longestWord(string){
     })}
 longestWord("Linguini eats avocados!");
 
+//Write a function called countVowels that takes a string and returns the 
+//number of vowels in the string. You should use Array.prototype.reduce to do your work.
+
+var vowels = ['a', 'e', 'i', 'o', 'u'];
+
+function countVowels(string) {
+    var split = string.split("");
+    return split.reduce(function(acc,next){
+        if (vowels.indexOf(next) > -1){acc++}
+        return acc;
+            },0);
+}
+countVowels("Linguini loves avocados!");
