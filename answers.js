@@ -17,3 +17,19 @@ myArray.filter(function getPositives(number) {
         console.log (number);
         }
 });
+
+//Write a function called filterArray that takes an array AND a function as arguments. 
+//Your filter function should return a new array that contains only the elements where 
+//the passed function returns a truthy value.
+
+function filterArray(array, fn) {
+    return array.filter(fn);
+}
+function fn(number) {
+    if (number) {
+        return number;
+    }
+}
+
+filterArray(myArray, fn);
+
