@@ -61,3 +61,20 @@ function countVowels(string) {
             },0);
 }
 countVowels("Linguini loves avocados!");
+
+//Write a function called highLow that takes an array of numbers, and returns an object 
+//with a property highest containing the highest number, and a property lowest containing 
+//the lowest number, using Array.prototype.reduce
+
+function highLow(array) {
+       return array.reduce(function(acc, number){
+            if (number > acc.highest) {
+                acc.highest = number;
+            }
+            if (number < acc.lowest) {
+                acc.lowest = number;
+            }
+            return acc;
+    },{highest: -Infinity, lowest: Infinity}); 
+}
+highLow(array);
