@@ -77,4 +77,28 @@ function highLow(array) {
             return acc;
     },{highest: -Infinity, lowest: Infinity}); 
 }
-highLow(array);
+highLow(myArray);
+
+//Write a function called highLowTwo that takes an array of numbers, and returns 
+//the higest, second highest, lowest, and second lowest numbers.
+
+function highLowTwo(array) {
+       return array.reduce(function(acc, number){
+            if (number > acc.highest) {
+                acc.secondHighest = acc.highest
+                acc.highest = number;
+            }
+            else if(number > acc.secondHighest){
+                acc.secondHighest = number
+            }
+            if (number < acc.lowest) {
+                acc.secondLowest = acc.lowest;
+                acc.lowest = number;
+            }
+            else if (number < acc.secondLowest){
+                acc.secondLowest = number
+            }
+            return acc;
+    },{highest: -Infinity, secondHighest: -Infinity,lowest: Infinity, secondLowest: Infinity}); 
+}
+console.log(highLowTwo(myArray));
